@@ -1,14 +1,13 @@
 // const {emailTemplate}= require('./js-foundation/01-template');
 // require('./js-foundation/02-destructuring')
-const {getUserById} = require('./js-foundation/03-callbacks');
+// const {getUserById} = require('./js-foundation/03-callbacks');
+const {getAge,getUUID} =require('./plugins')
+const {buildMakePerson} = require('./js-foundation/05-factory')
 
-const id = 1;
+const makePerson = buildMakePerson({getUUID,getAge});
 
-getUserById( id, (error,user) =>{
-  if(error) throw new Error(error);
+const obj = {name: 'John', birthdate: '2000-01-01'};
 
-  console.log(user);
-});
-
-// console.log(emailTemplate)
+const john = makePerson(obj)
+console.log(john)
 
