@@ -4,3 +4,6 @@ getPokemonById(4)
   .then((pokemon) => console.log({pokemon}))
   .catch((err) => console.log(err))
   .finally(() => console.log('Finalmente'));
+
+//Token de acceso
+//Peticiones publicas
